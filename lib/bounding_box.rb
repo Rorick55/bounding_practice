@@ -7,4 +7,19 @@ class BoundingBox
     @height = height
   end
 
+  def right
+    right = @left + @width
+  end
+
+  def top
+    top = @bottom + @height
+  end
+
+  def contains_point?(x,y)
+    if  @left <= x <= right && @bottom <= y <= top
+      true
+    else
+      false
+    end
+  end
 end
