@@ -4,18 +4,17 @@ class BoundingArea
   end
 
   def contains_point?(x,y)
-    if @boxes.empty?
-      false
-    else
+    includes = []
       @boxes.each do |box|
         if box.contains_point?(x,y)
-          true
-          break
-        else
-          false
+          includes << 1
         end
       end
-    end
+      if includes.empty?
+        false
+      else
+        true
+      end
   end
-
 end
+
